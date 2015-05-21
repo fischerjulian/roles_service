@@ -1,6 +1,9 @@
 require 'test_helper'
 
 class CategoriesControllerTest < ActionController::TestCase
+
+  include Devise::TestHelpers
+
   setup do
     @category = categories(:one)
   end
