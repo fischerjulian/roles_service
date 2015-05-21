@@ -4,8 +4,10 @@ class RolesControllerTest < ActionController::TestCase
 
   include Devise::TestHelpers
 
-  setup do    
+  setup do        
     @role = roles(:one)
+    @user = users(:one)
+    sign_in :user, @user
   end
 
   test "should get index" do
@@ -19,7 +21,7 @@ class RolesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create role" do
+  test "should create role" do    
     assert_difference('Role.count') do
       post :create, role: { title: @role.title }
     end

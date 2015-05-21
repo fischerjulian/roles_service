@@ -6,6 +6,8 @@ class EmployeesControllerTest < ActionController::TestCase
 
   setup do
     @employee = employees(:one)
+    @user = users(:one)
+    sign_in :user, @user
   end
 
   test "should get index" do

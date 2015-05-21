@@ -6,6 +6,8 @@ class CategoriesControllerTest < ActionController::TestCase
 
   setup do
     @category = categories(:one)
+    @user = users(:one)
+    sign_in :user, @user
   end
 
   test "should get index" do

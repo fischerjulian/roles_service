@@ -6,6 +6,8 @@ class TasksControllerTest < ActionController::TestCase
 
   setup do
     @task = tasks(:one)
+    @user = users(:one)
+    sign_in :user, @user
   end
 
   test "should get index" do
