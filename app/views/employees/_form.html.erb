@@ -3,5 +3,9 @@
   <%= f.text_field :lastname %>
   <%= f.text_field :email %>
   <%= f.file_field :picture %>
+
+  <%= hidden_field_tag "employee[role_ids][]", nil %>
+  <%= f.select :role_ids, Role.all.map { |c| [c.title, c.id]}, {}, multiple: true %>
+  <br/>
   <%= f.submit %>
 <% end %>

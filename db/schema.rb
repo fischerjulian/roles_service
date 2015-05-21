@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150507142732) do
+ActiveRecord::Schema.define(version: 20150521133149) do
 
   create_table "categories", force: true do |t|
     t.string   "title"
@@ -38,6 +38,14 @@ ActiveRecord::Schema.define(version: 20150507142732) do
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
   end
+
+  create_table "employees_roles", id: false, force: true do |t|
+    t.integer "employee_id", null: false
+    t.integer "role_id",     null: false
+  end
+
+  add_index "employees_roles", ["employee_id", "role_id"], name: "index_employees_roles_on_employee_id_and_role_id"
+  add_index "employees_roles", ["role_id", "employee_id"], name: "index_employees_roles_on_role_id_and_employee_id"
 
   create_table "roles", force: true do |t|
     t.string   "title"
