@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @role.title %>
+</p>
+
+<p>
+<strong>Tasks</strong>
+</p>
+<ul class="list-group">
+<% @role.tasks.each do |t| %>
+  <li class="list-group-item"><%= link_to t.title, task_path(t) %></li>
+<% end %>
+</ul>
+
+
+<%= link_to 'Edit', edit_role_path(@role) %> |
+<%= link_to 'Back', roles_path %>

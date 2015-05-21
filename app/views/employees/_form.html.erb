@@ -1,0 +1,7 @@
+<%= bootstrap_form_for(@employee) do |f| %>
+  <%= f.text_field :firstname %>
+  <%= f.text_field :lastname %>
+  <%= f.text_field :email %>
+  <%= f.file_field :picture %>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,7 @@
+<%= bootstrap_form_for(@role) do |f| %>
+  <%= f.alert_message "Please fix the errors below." %>
+
+  <%= f.text_field :title %>
+  <%= f.submit %>
+
+<% end %>

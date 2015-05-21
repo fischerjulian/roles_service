@@ -1,0 +1,14 @@
+<%= bootstrap_form_for(@task, label_errors: true) do |f| %>
+  <%= f.alert_message "Please fix the errors below." %>
+
+  <%= hidden_field_tag "task[category_ids][]", nil%>
+  
+  <%# f.collection_check_boxes :category_ids, Category.all, :id, :title %>
+  <%= f.select :category_ids, Category.all.map { |c| [c.title, c.id]}, {}, multiple: true %>
+
+  <%= f.text_field :title %>
+  <%= f.text_area :description %>
+  <%= f.select :role_id, Role.order(:title).all.map{ |r| [r.title, r.id]} %>
+  <%= f.submit %>
+
+<% end %>

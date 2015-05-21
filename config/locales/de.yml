@@ -1,0 +1,7 @@
+de:
+  hello: "Hallo welt"
+  roles:
+    list: "Rollenübersicht"
+  role_mailer:
+    new:
+      subject: "Neue Rolle wurde angelegt"
