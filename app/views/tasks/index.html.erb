@@ -16,7 +16,7 @@
       <tr>
         <td><%= task.title %></td>
         <td><%= task.description %></td>
-        <td><%= link_to task.role.title, task.role %></td>
+        <td><%= link_to(task.role.title, task.role) if task.role.present? %></td>
         <td>
           <% task.categories.each do |c| %>
             <span class="label label-info"><%= c.title %></span>
