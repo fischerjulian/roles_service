@@ -2,20 +2,31 @@ require 'rubyvis'
 
 class Organigram
 
+  def initialize(orgs)
+
+    @tree_data = {}
+    orgs.each do |org|
+      @tree_data[org.title] = build_tree_data(org)
+    end
+  end
+
   def to_vis
-    tree_data = {
-      "Executive" => {
-        "Finances" => "Benjamin",
-        "Development" => {
-          "Mobile Development" => "Peter",
-          "Web Development" => "Rick, Tom"
-        }
-      }
-    }
+
+    tree_data = @tree_data
+
+    # tree_data = {
+    #   "Executive" => {
+    #     "Finances" => "Benjamin",
+    #     "Development" => {
+    #       "Mobile Development" => "Peter",
+    #       "Web Development" => "Rick, Tom"
+    #     }
+    #   }
+    # }
 
     vis = Rubyvis::Panel.new()
-        .width(400)
-        .height(400)
+        .width(800)
+        .height(800)
         .left(0)
         .right(0)
         .top(0)
@@ -39,6 +50,23 @@ class Organigram
 
     vis.render
     vis    
+  end
+
+  protected
+
+  def build_tree_data(org)
+    puts "\n\nbuilding tree for #{org.title}...\n\n"
+    tree_data = {}
+    
+    if org.child_units.empty? then
+      tree_data = org.title
+    else
+      org.child_units.each do |child_unit|
+        tree_data[child_unit.title] = build_tree_data(child_unit)
+      end
+    end
+
+    tree_data
   end
 end
 

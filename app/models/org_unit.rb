@@ -4,5 +4,5 @@ class OrgUnit < ActiveRecord::Base
 
   validates :title, presence: true
 
-  scope :roots, -> { where("parent_unit IS NULL") }
+  scope :roots, -> { where("parent_unit_id IS NULL") }
 end
