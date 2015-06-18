@@ -13,4 +13,8 @@ module ApplicationHelper
         flash_type.to_s
     end
   end
+
+  def org_unit_parent(org_unit)
+    org_unit.parent_unit.nil? ?  "-" : org_unit.parent_unit.title
+  end
 end

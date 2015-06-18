@@ -15,7 +15,7 @@
       <tr>
         <td><%= org_unit.title %></td>
         <td><%= org_unit.description %></td>
-        <td><%= org_unit.parent_unit %></td>
+        <td><%= org_unit_parent(org_unit) %></td>
         <td><%= link_to 'Show', org_unit %></td>
         <td><%= link_to 'Edit', edit_org_unit_path(org_unit) %></td>
         <td><%= link_to 'Destroy', org_unit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
