@@ -9,6 +9,6 @@
   <%= f.select :role_id, Role.order(:title).all.map{ |r| [r.title, r.id]} %>
 
   <%= f.text_field :estimated_duration, label: "Estimated duration in seconds" %>
-  <%= f.submit %>
+  <%= f.submit class: 'btn btn-success' %>
 
 <% end %>
