@@ -17,6 +17,10 @@
     <%= link_to edit_task_path(t) do %>
       <span class="glyphicon glyphicon-pencil pull-right" />
     <% end %>
+
+    <%= link_to t, method: :delete, data: { confirm: 'Are you sure?' } do %>
+      <span class="glyphicon glyphicon-trash pull-right" />
+    <% end %>
   </li>
 <% end %>
 </ul>
