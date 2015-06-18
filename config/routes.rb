@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resource :organigram, only: [:show]
+
   resources :org_units
 
   resources :employees

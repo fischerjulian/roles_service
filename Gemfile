@@ -31,7 +31,9 @@ gem 'bootstrap_form'
 
 gem 'devise'
 gem 'paperclip'
-gem "letter_opener", :group => :development
+gem 'letter_opener', :group => :development
+
+gem 'rubyvis'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
