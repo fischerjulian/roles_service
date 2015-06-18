@@ -1,0 +1,9 @@
+<%= bootstrap_form_for(@org_unit) do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_area :description %>
+  
+  <%= f.select :parent_unit_id, OrgUnit.all.map { |c| [c.title, c.id]}, { include_blank: true } %>
+  
+  <br/>
+  <%= f.submit %>
+<% end %>

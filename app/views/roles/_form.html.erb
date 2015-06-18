@@ -2,6 +2,11 @@
   <%= f.alert_message "Please fix the errors below." %>
 
   <%= f.text_field :title %>
+
+  <%= hidden_field_tag "roles[employee_ids][]", nil %>
+  <%= f.select :employee_ids, Employee.all.map { |c| [c.fullname, c.id]}, {}, multiple: true %>
+  <br/>
+
   <%= f.submit %>
 
 <% end %>

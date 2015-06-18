@@ -1,0 +1,29 @@
+<h1>Listing org_units</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Parent unit</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @org_units.each do |org_unit| %>
+      <tr>
+        <td><%= org_unit.title %></td>
+        <td><%= org_unit.description %></td>
+        <td><%= org_unit.parent_unit %></td>
+        <td><%= link_to 'Show', org_unit %></td>
+        <td><%= link_to 'Edit', edit_org_unit_path(org_unit) %></td>
+        <td><%= link_to 'Destroy', org_unit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Org unit', new_org_unit_path, class: 'btn btn-success' %>

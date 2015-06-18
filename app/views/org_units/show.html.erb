@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @org_unit.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @org_unit.description %>
+</p>
+
+<p>
+  <strong>Parent unit:</strong>
+  <%= @org_unit.parent_unit %>
+</p>
+
+<%= link_to 'Edit', edit_org_unit_path(@org_unit) %> |
+<%= link_to 'Back', org_units_path %>

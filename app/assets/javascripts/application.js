@@ -18,4 +18,5 @@
 $(document).ready(function() {
    $('#task_category_ids').multiselect();
    $('#employee_role_ids').multiselect();
+   $('#role_employee_ids').multiselect();
 });

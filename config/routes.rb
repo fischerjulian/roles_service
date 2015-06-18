@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :org_units
+
   resources :employees
 
   devise_for :users

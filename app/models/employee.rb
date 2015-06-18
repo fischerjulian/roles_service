@@ -3,4 +3,9 @@ class Employee < ActiveRecord::Base
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
 
   has_and_belongs_to_many :roles
+
+
+  def fullname
+    "#{firstname} #{lastname}"
+  end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150521133149) do
+ActiveRecord::Schema.define(version: 20150618083041) do
 
   create_table "categories", force: true do |t|
     t.string   "title"
@@ -46,6 +46,16 @@ ActiveRecord::Schema.define(version: 20150521133149) do
 
   add_index "employees_roles", ["employee_id", "role_id"], name: "index_employees_roles_on_employee_id_and_role_id"
   add_index "employees_roles", ["role_id", "employee_id"], name: "index_employees_roles_on_role_id_and_employee_id"
+
+  create_table "org_units", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "parent_unit_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "org_units", ["parent_unit_id"], name: "index_org_units_on_parent_unit_id"
 
   create_table "roles", force: true do |t|
     t.string   "title"
