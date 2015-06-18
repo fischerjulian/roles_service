@@ -10,6 +10,7 @@ class RolesController < ApplicationController
   # GET /roles/1
   # GET /roles/1.json
   def show
+    @task = @role.tasks.build  
   end
 
   # GET /roles/new

@@ -1,3 +1,4 @@
+<h1>Role</h1>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -10,10 +11,15 @@
 </p>
 <ul class="list-group">
 <% @role.tasks.each do |t| %>
+  <% next if t.new_record? %>
   <li class="list-group-item"><%= link_to t.title, task_path(t) %></li>
 <% end %>
 </ul>
 
+<h3>Add Task</h3>
+<%= render 'tasks/form' %>
 
+<br/>
+<br/>
 <%= link_to 'Edit', edit_role_path(@role) %> |
 <%= link_to 'Back', roles_path %>
