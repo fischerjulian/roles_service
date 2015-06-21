@@ -4,7 +4,6 @@ module Organigram
   class RubyVis
 
     def initialize(orgs)
-
       @tree_data = {}
       orgs.each do |org|
         @tree_data[org.title] = build_tree_data(org)
@@ -56,7 +55,7 @@ module Organigram
     protected
 
     def build_tree_data(org)
-      puts "\n\nbuilding tree for #{org.title}...\n\n"
+      puts "\n\nbuilding RubyVis tree for #{org.title}...\n\n"
       tree_data = {}
       
       if org.child_units.empty? then
