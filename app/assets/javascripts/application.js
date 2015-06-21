@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require_tree .
 //= require twitter/bootstrap
+//= require d3
+//= require d3.layout
 
 $(document).ready(function() {
    $('#task_category_ids').multiselect();

@@ -34,6 +34,12 @@ gem 'paperclip'
 gem 'letter_opener', :group => :development
 
 gem 'rubyvis'
+gem 'rails_12factor', group: :production
+
+gem 'fog'
+gem 'a9s_swift'
+
+gem 'pg', group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
