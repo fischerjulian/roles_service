@@ -1,5 +1,12 @@
+<% content_for :head do %>
+  <!-- content for head -->
+  <%# http://www.google.com/uds/modules/gviz/gviz-api.js %>
+  <%= javascript_include_tag "https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['orgchart']}]}" %>
+<% end %>
+
+
 <h1>Organigrams</h1>
 
+<div id="chart_div"></div>
 
-<div id="organigram">
-</div>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>

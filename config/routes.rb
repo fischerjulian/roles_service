@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resource :organigram, only: [:show]
+  get 'organigram/diagram' => 'organigrams#diagram'
 
   resources :org_units
 

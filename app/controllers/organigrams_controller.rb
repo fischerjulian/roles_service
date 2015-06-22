@@ -14,4 +14,7 @@ class OrganigramsController < ApplicationController
       end
     end
   end
+
+  def diagram
+  end
 end
