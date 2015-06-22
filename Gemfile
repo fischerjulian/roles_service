@@ -33,7 +33,6 @@ gem 'devise'
 gem 'paperclip'
 gem 'letter_opener', :group => :development
 
-gem 'rubyvis'
 gem 'rails_12factor', group: :production
 
 gem 'fog'

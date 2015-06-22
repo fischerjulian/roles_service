@@ -1,10 +1,17 @@
+Organigram = {}
+
 $(function() {
   if($("#chart_div").length) {
-    console.log("Drawing organigram...");
-    google.load("visualization", "1", {packages:["orgchart"]});
-    google.setOnLoadCallback(drawChart);    
-    drawChart();
-    console.log("Drawing done");    
+    console.log("Loading organigram data...");
+    Organigram.Data = $.get("/organigram.json", function(data) {
+      Organigram.data = data;
+      console.log("Done loading organigram data...");
+      console.log("Drawing organigram...");
+      google.load("visualization", "1", {packages:["orgchart"]});
+      google.setOnLoadCallback(drawChart);    
+      drawChart();
+      console.log("Drawing done");    
+    });          
   }
 }
 );
@@ -17,14 +24,7 @@ function drawChart() {
   data.addColumn('string', 'Manager');
   data.addColumn('string', 'ToolTip');
 
-  data.addRows([
-    [{v:'Mike', f:'Julian Fischer<div style="color:red; font-style:italic">CEO</div>'}, '', 'The CEO'],
-    [{v:'Jim', f:'Jim<div style="color:red; font-style:italic">Vice President</div>'}, 'Mike', 'VP'],
-    ['Alice', 'Mike', ''],
-    ['Bob', 'Jim', 'Bob Sponge'],
-    ['Carol', 'Bob', ''],
-    ['Hektor', 'Carol', ''],
-  ]);
+  data.addRows(Organigram.data);
 
   var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
   chart.draw(data, {allowHtml:true});
