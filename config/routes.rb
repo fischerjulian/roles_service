@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :workflows
+
   resource :organigram, only: [:show]
   get 'organigram/diagram' => 'organigrams#diagram'
 
