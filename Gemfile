@@ -39,6 +39,7 @@ gem 'fog'
 gem 'a9s_swift'
 
 gem 'pg', group: :production
+gem 'rails_admin'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -51,4 +52,3 @@ gem 'pg', group: :production
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
