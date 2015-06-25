@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 20150624141821) do
     t.string   "title"
     t.text     "description"
     t.string   "detailed_description_url"
-    t.integer  "organizational_unit_id"
+    t.integer  "org_unit_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

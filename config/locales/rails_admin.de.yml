@@ -24,6 +24,7 @@ de:
       navigation: "Navigation"
       log_out: "Abmelden"
       ago: "her"
+      navigation_static_label: "Links"
     flash:
       successful: "%{name} wurde erfolgreich %{action}"
       error: "%{name} wurde nicht %{action}"

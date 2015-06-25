@@ -4,7 +4,7 @@ class CreateWorkflows < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.string :detailed_description_url
-      t.references :organizational_unit
+      t.references :org_unit
       t.timestamps
     end
   end

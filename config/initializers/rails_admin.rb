@@ -15,7 +15,6 @@ RailsAdmin.config do |config|
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
-
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
@@ -31,4 +30,8 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.navigation_static_links = {
+    'Organigram' => '/organigram'
+  }
 end

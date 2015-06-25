@@ -42,6 +42,6 @@ class OrgUnitsController < ApplicationController
     end
 
     def org_unit_params
-      params.require(:org_unit).permit(:title, :description, :parent_unit_id)
+      params.require(:org_unit).permit(:title, :description, :parent_unit_id, :workflow_ids)
     end
 end
