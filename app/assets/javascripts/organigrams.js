@@ -13,6 +13,10 @@ $(function() {
       console.log("Drawing done");
     });
   }
+
+  $('#btn-open').click(function() {
+    getSelectedOrgUnit();
+  });
 }
 );
 
@@ -30,11 +34,11 @@ function drawChart() {
   var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
   Organigram.Chart = chart;
   google.visualization.events.addListener(chart, 'select', orgUnitSelectedCallback);
-
-  chart.draw(data, {allowHtml:true});
+  google.visualization.events.addListener(chart, 'collapse', orgUnitCollapseCallback);
+  chart.draw(data, { allowHtml: true, allowCollapse: true });
 }
 
-function orgUnitSelectedCallback() {
+function getSelectedOrgUnit() {
   var chart = Organigram.Chart;
   var selected = chart.getSelection()[0];
   console.log("Selected: ", selected);
@@ -44,4 +48,12 @@ function orgUnitSelectedCallback() {
     var dataTable = Organigram.DataTable;
     console.log("Database ID: ", dataTable.getValue(row, 0));
   }
+}
+
+function orgUnitSelectedCallback() {
+
+}
+
+function orgUnitCollapseCallback(collapsed, row) {
+  console.log("Collapse: ", collapsed, ", Row: ", row)
 }
