@@ -15,7 +15,7 @@ $(function() {
   }
 
   $('#btn-open').click(function() {
-    getSelectedOrgUnit();
+    editOrgUnit();
   });
 }
 );
@@ -41,13 +41,16 @@ function drawChart() {
 function getSelectedOrgUnit() {
   var chart = Organigram.Chart;
   var selected = chart.getSelection()[0];
+  var recordId;
   console.log("Selected: ", selected);
 
   if (selected) {
     var row = selected.row;
     var dataTable = Organigram.DataTable;
-    console.log("Database ID: ", dataTable.getValue(row, 0));
+    recordId = dataTable.getValue(row, 0)
+    console.log("Database ID: ", recordId);
   }
+  return recordId;
 }
 
 function orgUnitSelectedCallback() {
@@ -56,4 +59,12 @@ function orgUnitSelectedCallback() {
 
 function orgUnitCollapseCallback(collapsed, row) {
   console.log("Collapse: ", collapsed, ", Row: ", row)
+}
+
+function editOrgUnit() {
+  var recordId = getSelectedOrgUnit();
+
+  if (recordId) {
+    window.location.href = '/admin/org_unit/' + recordId  + '/edit';
+  }
 }
