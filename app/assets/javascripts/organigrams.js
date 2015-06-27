@@ -14,7 +14,7 @@ $(function() {
     });
   }
 
-  $('#btn-open').click(function() {
+  $('#btn-edit').click(function() {
     editOrgUnit();
   });
 }
