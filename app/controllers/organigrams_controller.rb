@@ -1,3 +1,6 @@
+require "#{Rails.root}/lib/organigram"
+require "#{Rails.root}/lib/organigram/google"
+
 class OrganigramsController < ApplicationController
   def show
     org_unit_roots = OrgUnit.roots
